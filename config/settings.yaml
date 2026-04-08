@@ -8,10 +8,10 @@ notion:
   # Database IDs: find via Notion → Share → Copy link → extract UUID
   databases:
     # Examples — replace with your actual IDs
-    compass_circumcision: ""
-    compass_turp: ""
-    compass_varicocele: ""
-    ccgs_outcomes: ""
+    DB1_Patients: "cc3369aeeb754f17ab856cf3e28be4f8"
+    DB2-Operations: "c776e6598b424493a0afde082bf71f0c"
+    DB3-Postop Inpatient: "56facd704541476793c43a0b18c854ae"
+    DB4 — Follow-up: "10cec9fc92764132a26709b9f9823b65"
     # Add freely:
     # my_custom_db: "notion-uuid-here"
 
