@@ -1,0 +1,22 @@
+# Environment
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data — NEVER commit patient data
+data/raw/
+data/processed/
+data/snapshots/
+
+# Outputs (regenerated on each run)
+outputs/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
