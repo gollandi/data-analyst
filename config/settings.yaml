@@ -1,0 +1,53 @@
+# ─────────────────────────────────────────────────────────
+# notion_stats — central configuration
+# Edit this file, never hard-code values in notebooks/src
+# ─────────────────────────────────────────────────────────
+
+notion:
+  # Populated from .env: NOTION_API_KEY
+  # Database IDs: find via Notion → Share → Copy link → extract UUID
+  databases:
+    # Examples — replace with your actual IDs
+    compass_circumcision: ""
+    compass_turp: ""
+    compass_varicocele: ""
+    ccgs_outcomes: ""
+    # Add freely:
+    # my_custom_db: "notion-uuid-here"
+
+project:
+  name: "GGOMed Statistical Analysis"
+  author: "GJ Ollandini"
+  institution: "GGO Med Ltd / CCGS, Chelsea & Westminster NHS"
+  seed: 42                        # global RNG seed — never change mid-study
+  snapshot_on_extract: true       # always save raw Parquet snapshot with timestamp
+  data_dir: "data"
+  output_dir: "outputs"
+
+statistics:
+  alpha: 0.05                     # significance threshold
+  confidence_level: 0.95          # CI width
+  
+  # Multiple testing correction (applied automatically in pipeline)
+  # Options: "bonferroni" | "fdr_bh" | "fdr_by" | "holm" | "none"
+  multiple_testing_correction: "fdr_bh"   # Benjamini-Hochberg (recommended for exploratory)
+  
+  # Always report effect sizes — required for peer review
+  report_effect_sizes: true
+  
+  # Normality testing strategy
+  normality_test: "shapiro"        # "shapiro" | "ks" | "dagostino"
+  normality_alpha: 0.05
+  
+  # Variance homogeneity
+  variance_test: "levene"          # "levene" | "bartlett"
+
+reporting:
+  apa_tables: true                 # APA 7th format for all output tables
+  decimal_places: 3
+  p_format: "apa"                  # "apa" → p = .023 / p < .001
+  include_ci: true
+  include_effect_size: true
+  figure_dpi: 300                  # publication-quality
+  figure_format: "svg"             # "svg" | "pdf" | "png" — svg best for journals
+  table_format: "latex"            # "latex" | "html" | "csv" | "xlsx"
