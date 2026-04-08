@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────
+# Notion Stats Environment
+# Peer-review grade statistical analysis
+# Python >= 3.11 required
+# ─────────────────────────────────────────────
+
+# === NOTION & DATA INGESTION ===
+notion-client>=2.2.1
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+requests>=2.31.0
+
+# === CORE DATA ===
+pandas>=2.2.0
+numpy>=1.26.0
+openpyxl>=3.1.2          # Excel I/O
+pyarrow>=14.0.0           # Parquet (fast serialisation for snapshots)
+
+# === STATISTICS — PEER REVIEW GRADE ===
+scipy>=1.12.0             # core tests: t-test, Mann-Whitney, chi2, Fisher, KS, Shapiro
+statsmodels>=0.14.1       # GLM, OLS, logistic regression, mixed models, ANOVA
+pingouin>=0.5.4           # effect sizes (Cohen d, eta2, omega2), power, BF10, partial corr
+lifelines>=0.27.8         # Kaplan-Meier, Cox PH, survival analysis
+scikit-posthocs>=0.9.0    # post-hoc tests (Dunn, Conover, Nemenyi)
+pymc>=5.10.0              # Bayesian inference (optional — heavy dep)
+bambi>=0.13.0             # Bayesian GLMs via PyMC
+
+# === MULTIPLE TESTING & EFFECT SIZES ===
+# (covered by pingouin + statsmodels; no extra package needed)
+
+# === VISUALISATION ===
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.19.0
+kaleido>=0.2.1            # static export for plotly (figures for papers)
+
+# === REPRODUCIBILITY & REPORTING ===
+jupyter>=1.0.0
+jupyterlab>=4.1.0
+nbformat>=5.9.0
+papermill>=2.5.0          # parametric notebook execution
+jinja2>=3.1.3             # report templating
+
+# === OUTPUT ===
+reportlab>=4.1.0          # PDF table/figure generation
+fpdf2>=2.7.9              # alternative lightweight PDF
+tabulate>=0.9.0           # APA-style tables in text
+
+# === QUALITY & REPRODUCIBILITY ===
+pytest>=8.0.0
+black>=24.1.0
+ruff>=0.2.0
